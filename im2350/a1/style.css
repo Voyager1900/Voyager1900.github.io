@@ -1,0 +1,50 @@
+
+
+html {
+    background-color: #bbbfe5;
+  } 
+  
+  
+
+  body {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #42136827;
+    padding: 0 20px 20px 20px;
+    border: 10px solid rgb(47, 5, 67);
+  }
+
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 60px;
+    text-align: center; 
+    margin: 0;
+    padding: 20px 0;
+    color: #f4f0f3;
+    text-shadow: 6px 6px 2px black;
+  }
+
+
+  img{
+    width: 1000px;
+  }
+
+
+  h3 {
+    font-size: 22px;
+    text-align: left;
+    color: rgb(43, 72, 200);
+    width: 900px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  
+  p,
+  li {
+    font-size: 19px;
+    line-height: 2;
+    width: 800px;
+  }
+  
+
