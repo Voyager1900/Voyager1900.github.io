@@ -1,0 +1,144 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#222323;
+  /* Change the col-02 to make the video progress look more obvious */
+  --col-02:#949591;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --col-05:#bcbdbc;
+  --col-06:#6f6f6f;
+  --border: 1px solid var(--col-02);
+}
+
+.video-player-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+.video-element-wrapper{
+/* I want to some space above the video */
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#videoElement{
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#videoPlayOverlay{
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  pointer-events: none;
+  display: none;
+}
+
+.video-controls-wrapper{
+  display: flex;
+  justify-content: center;
+}
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper{
+  display: none;
+/* Change the color around the logo button to be the same with the logo picture */
+  background: #EFEFEF;
+}
+
+input[type="range"] {
+  width: 60%;
+  cursor: pointer;
+}
+
+.video-control-button{
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  border: none;
+  cursor: pointer;
+  /* I want some same between each logo */
+  margin-right: 20px
+}
+.video-control-button:hover{
+  background-color: var(--col-05);
+}
+.video-control-button:active{
+  background-color: var(--col-06);
+}
+.button-icon{
+  pointer-events: none;
+}
+
+#playButton{
+  background-image: url('./icons/play.svg');
+}
+
+#muteButton{
+  background-image: url('./icons/mute.svg');
+}
+
+#fastForwardButton{
+  background-image: url('./icons/fastForward.svg');
+}
+
+#rewindButton{
+  background-image: url('./icons/rewind.svg');
+}
+
+
+.video-progress-bar{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2rem;
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+  margin: 0 20px;
+}
+::-moz-progress-bar {
+  background-color: var(--col-02);
+}
+
+::-webkit-progress-bar {
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-webkit-progress-value {
+  background-color: var(--col-02);
+}
+
+.timeline-loading{
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  100%{
+    background-position: 50% 0%;
+  }
+}
+
