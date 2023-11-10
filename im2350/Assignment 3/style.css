@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  background-color: var(--colour-three);
+  /* Hide the default cursor */
+  cursor: none; 
+}
+
+.custom-cursor {
+  position: absolute;
+  /* Set the width of your custom cursor */
+  width: 32px; 
+  /* Set the height of your custom cursor */
+  height: 32px; 
+  background-size: cover;
+  /* Ensure it doesn't interfere with mouse events */
+  pointer-events: none; 
+  /* Make sure it's on top of everything */
+  z-index: 9999; 
+  display: none; 
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --colour-one: rgb(0,0,0);
+    --colour-two: rgb(100,100,100);
+    --colour-three: rgb(180,180,180);
+    --colour-four: rgb(240,240,240);
+    --colour-five: hsl(240, 45%, 54%);
+    --border-one: dashed 2px white;
+}
+
+
+#randomButtonOne {
+  background-color: rgb(62, 148, 192);
+  color: white;
+  position: absolute;
+  /* position of the button when loading */
+  top: 500px;
+  left: 500px;
+  /* size of the button*/
+  width: 200px;
+  height: 100px;
+  border: 5px solid rgb(18, 9, 57); 
+  /* font of the button text */
+  font-size: 28px;
+  /* Change property values smoothly when a click is triggered.*/
+  transition: left 0.5s ease, top 0.5s ease;
+}
+
+#randomExplanationOne {
+  font-size: 30px;
+  color: #333;
+  position: absolute;
+  /* position of the randomexplantion when loading */
+  top: 650px;
+  left:500px;
+  /* Change property values smoothly when a click is triggered.*/
+  transition: left 0.5s ease, top 0.5s ease;
+}
+/* Add fade in and ease out animation so they look smoothly */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#randomButtonOne, #randomExplanationOne {
+  animation: fadeIn .5s ease-in-out;
+}
